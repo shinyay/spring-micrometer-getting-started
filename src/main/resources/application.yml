@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  main:
+    allow-bean-definition-overriding: true
+management:
+  metrics:
+    enable:
+      root: true
+      jvm: true
+    export:
+      influx:
+        enabled: true
+        uri: "http://localhost:8086"
+      graphite:
+        host: 127.0.0.1
+        port: 2004
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+
+---
+
+spring:
+  profiles: prod
+  main:
+    allow-bean-definition-overriding: true
+management:
+  metrics:
+    enable:
+      root: true
+      jvm: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: false
