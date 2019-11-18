@@ -91,7 +91,10 @@ docker run --rm -d \
 - user/password : `admin/admin`
 
 ## Demo
-
+```
+$ cd prometheus-container
+$ docker-compose up -d
+```
 ## Features
 
 - feature:1
