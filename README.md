@@ -37,7 +37,7 @@ $ docker run --rm -d \
 -p 9090:9090 \
 -v (pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
 prom/prometheus:v2.13.1 \
---config.file=(pwd)/prometheus.yml
+--config.file=/etc/prometheus/prometheus.yml
 ```
 
 - prometheus.yml
